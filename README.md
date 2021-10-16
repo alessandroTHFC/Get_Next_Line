@@ -1,2 +1,2 @@
 # Get_Next_Line
-Reading lines and whatnot. 
+Reading lines and whatnot; 
