@@ -5,9 +5,9 @@ static char	*update_n_format(char *line);
 
 char	*get_next_line(int fd)
 {
-	char	*line;
-	char	*buffer;
-	char	*leftovers;
+	char		*line;
+	char		*buffer;
+	static char	*leftovers;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
@@ -43,7 +43,7 @@ static char	*read_n_append(int fd, char *buffer, char *leftovers)
 		leftovers = ft_strjoin(temp, buffer);
 		free(temp);
 		temp = NULL;
-		if (ft_strchr(buffer, '\n')
+		if (ft_strchr(buffer, '\n'))
 			break;
 	}
 	return (leftovers);
@@ -66,5 +66,5 @@ static char *update_n_format(char *line)
 		leftovers = NULL;
 	}
 	line[nl_indx + 1] = '\0';
-	return (leftovers)
+	return (leftovers);
 }
